@@ -1,7 +1,7 @@
 # G920-shifter-stand-alone - 13/05/2020
 Logitech G920 shifter to work as it's own USB device
 
-One of the problems that seems to keep showing up with peoples G920 shifter, is that it shifts into the wrong gears. This will help to set up the shifter, to change the calibration of it.
+One of the problems that seems to keep showing up with peoples G920 shifter, is that it shifts into the wrong gears. This will help to set up the shifter to change the calibration.
 
 Before doing this, be sure to strip down the shifter to spray some cleaning fluid into the potentiometers. This helps a lot, but might not be the final solution.
 
@@ -22,4 +22,8 @@ You will need this library installed into your Arduino software - https://github
 # This only works with the Arduino Leonardo and the Arduino Pro Mini
 
 ![gearstickdiagram](https://user-images.githubusercontent.com/65309612/81860694-01a14780-955f-11ea-93c1-67e7dec296e0.JPG)
+Picture credit to amstudio
 
+Wire up your gear stick DB9 connector to your Arduino like so. You can just push peices of wire into the conector and the Arduino. I did this to confirm it all works. Then ordered some male CB9 connectors that I can mount to the outside of a case of some kind.
+
+Open the Arduino sketch to see the comments inside that explain how to change your calibration and enable the input to wire in anything you like. My main reason is to use it for a gear splitting function in Euro Truck Sim. Other uses I can think of might be to add a button somewhere on the shifter. It could be useful for arming nitrous in BeamNG Drive. I have it set up in Assetto Corsa to shift into 7th gear for cars that need it. Use your imagination.
