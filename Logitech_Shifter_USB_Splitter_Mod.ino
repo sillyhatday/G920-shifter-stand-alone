@@ -8,14 +8,14 @@
 //Attribution-NonCommercial-NoDerivatives 4.0 International
 
 
-#include <Joystick.h>
+#include <Joystick.h>         //this is the joystick library you need to install so this sketch can call it
 
 // Create the Joystick
 Joystick_ Joystick;
 
-// H-shifter mode analog axis thresholds
+// H-shifter mode analog axis thresholds        //these values change when the Arduino register what gear you are in
 #define HS_XAXIS_12        380
-#define HS_XAXIS_56        600
+#define HS_XAXIS_56        600      //this value should be the only one you need to change - it changes to position of 3rd and 4th gear
 #define HS_YAXIS_135       800
 #define HS_YAXIS_246       300
 
@@ -30,10 +30,10 @@ Joystick_ Joystick;
 #define HB_MINIMUM         400
 #define HB_RANGE           (HB_MAXIMUM-HB_MINIMUM)
 
-// Digital inputs definitions
-#define DI_REVERSE         1
-#define DI_MODE            3
-#define DI_RED_CENTERRIGHT 4
+// Digital inputs definitions          //Non of these appear to be used in this version of the sketch
+#define DI_REVERSE         1           //only pin 2 is used to enable reverse gear
+#define DI_MODE            3           //you should be able to use any pin you like
+#define DI_RED_CENTERRIGHT 4           //I can only confirm that pin 12 works perfectly
 #define DI_RED_CENTERLEFT  5
 #define DI_RED_RIGHT       6
 #define DI_RED_LEFT        7
@@ -139,16 +139,16 @@ if( _isreverse == 1 ){
       Joystick.setButton(gear-1, HIGH);
    }
 
-  if (digitalRead(12) == HIGH) 
-  {
-    Joystick.setButton(11, LOW);
-  } 
-  else 
-  {   
-    Joystick.setButton(11, HIGH);
-  }
-   
-   delay(50);
+  //if (digitalRead(12) == HIGH)          //this is my addition to the code
+  //{                                     //uncomment all of this to enable the digital input
+  //  Joystick.setButton(11, LOW);
+  //}                                     //change the number 12 to any other pin on your arduino you like
+  //else 
+  //{                                     //you can change the number 11 to any other number you like above 7 - used for the gear selection
+  //  Joystick.setButton(11, HIGH);       //in windows joystick output 11 is read as 12
+  //}                                     //the joystick library reads all 32 buttons as 0 - 31
+                                          //in windows all 32 buttons are read as 1 - 32
+   delay(50);                             //take one off the number you would like the button to be
 }
 
 void desactivar(){
