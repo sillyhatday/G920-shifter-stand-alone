@@ -7,6 +7,7 @@
 //Install Joystick Library 
 //Attribution-NonCommercial-NoDerivatives 4.0 International
 
+//Modified the above persons code - Sillyhatday
 
 #include <Joystick.h>         //this is the joystick library you need to install so this sketch can call it
 
